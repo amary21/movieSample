@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.oxcoding.moviemvvm.R
 import com.oxcoding.moviemvvm.data.api.TheMovieDBClient
 import com.oxcoding.moviemvvm.data.api.TheMovieDBInterface
@@ -34,9 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         val movieAdapter = PopularMoviePagedListAdapter(this)
 
-        val gridLayoutManager = GridLayoutManager(this, 1)
-
-        rv_movie_list.layoutManager = gridLayoutManager
+        rv_movie_list.layoutManager = LinearLayoutManager(this)
         rv_movie_list.setHasFixedSize(true)
         rv_movie_list.adapter = movieAdapter
 
